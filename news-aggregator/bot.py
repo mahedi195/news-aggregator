@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import time
 import schedule
 import asyncio
@@ -5,6 +7,11 @@ import logging
 import os
 from datetime import datetime
 from crawler import crawl
+from gemini import generate
+
+
+def install_playwright_browsers():
+    subprocess.run([sys.executable, "-m", "playwright", "install"], check=True)
 
 # Configure logging
 logging.basicConfig(
@@ -82,7 +89,7 @@ def run_bot():
 
 if __name__ == "__main__":
     try:
+        install_playwright_browsers()  # Install Playwright browsers before running bot
         run_bot()
     except KeyboardInterrupt:
         logger.info("Bot stopped manually by user.")
-

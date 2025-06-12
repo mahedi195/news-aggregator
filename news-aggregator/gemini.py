@@ -14,4 +14,4 @@ def generate(contents):
 
 
 if __name__ == "__main__":
-    print(generate(contents=["why is the sky blue?"]))
+    print(generate(contents=["why is the sky blue?"])) 
