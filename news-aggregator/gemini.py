@@ -1,4 +1,5 @@
 from google import genai
+
 from google.genai import types
 
 # Only run this block for Gemini Developer API
@@ -15,3 +16,5 @@ def generate(contents):
 
 if __name__ == "__main__":
     print(generate(contents=["why is the sky blue?"])) 
+
+
